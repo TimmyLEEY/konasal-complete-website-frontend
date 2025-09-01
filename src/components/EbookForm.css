@@ -1,0 +1,87 @@
+.ebook-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  min-height: 80vh;
+}
+
+.ebook-form-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.ebook-form-card:hover {
+  transform: translateY(-5px);
+}
+
+.ebook-form-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #1a1a3c;
+}
+
+.ebook-form-title span {
+  color: #ff6347; /* highlight "FREE" */
+}
+
+.ebook-form-subtext {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.ebook-form-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.ebook-form-box input:focus {
+  border-color: #ff6347;
+}
+
+.ebook-form-box button {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff6347;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ebook-form-box button:hover {
+  background-color: #e5533d;
+}
+
+.ebook-form-box button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .ebook-form-card {
+    padding: 30px 20px;
+  }
+  .ebook-form-title {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,39 @@
+.about-details {
+  padding: 60px 20px;
+  max-width: 900px; /* slightly reduced for better readability */
+  margin: auto;
+  line-height: 1.8;
+  color: #1a1a3c;
+  text-align: center;  /* ✅ Center all text */
+}
+
+.about-description {
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+}
+
+.about-founder h3 {
+  font-size: 1.8rem;
+  color: #1a1a3c;
+  margin-bottom: 15px;
+}
+
+.about-founder p {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.about-founder strong {
+  color: #1a1a3c; /* highlight important text in orange */
+}
+
+@media (max-width: 768px) {
+  .about-details {
+    padding: 40px 15px;
+    text-align: center; /* keep centered on mobile */
+  }
+
+  .about-founder h3 {
+    font-size: 18px;
+  }
+}

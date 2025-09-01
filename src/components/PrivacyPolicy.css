@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 70px;
+}
+.privacy-policy {
+  padding: 0;
+  background: #f8f9fa;
+  color: #002060;
+  line-height: 1.7;
+}
+
+.privacy-header {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  overflow: hidden;
+  background: #ffe9a3; /* grayish background */
+}
+.privacy-header h1 {
+  margin: 0;
+  color: #002060;
+}
+
+
+.privacy-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: #ffc000; /* yellow */
+  clip-path: polygon(0 0, 85% 0, 70% 100%, 0% 100%);
+  z-index: 1;
+}
+
+.privacy-content {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.policy-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  gap: 30px;
+}
+
+.privacy-header h1 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 2rem;
+  color: #002060;
+  font-weight: 700;
+}
+.policy-left {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #092865;
+  min-width: 200px;
+}
+
+.policy-right {
+  flex: 3;
+  color: #102e69;
+  font-size: 1.6rem;
+}
+
+.policy-right ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.policy-right a {
+  color: #102e69;
+  text-decoration: underline;
+}
+.policy-right a:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 768px) {
+  .policy-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .policy-left {
+    font-size: 1.9rem;
+    color: #002060;
+  }
+  a{
+    font-size: smaller;
+  }
+}

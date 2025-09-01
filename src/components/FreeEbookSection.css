@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.ebook-section {
+  background-color: #fbb034;
+  padding: 60px 20px;
+  font-family: 'Montserrat'
+}
+
+.ebook-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.ebook-image img {
+  max-width: 330px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ebook-text {
+  flex: 1;
+  min-width: 300px;
+}
+.ebook-text a{
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: underline;
+    border: white 2px solid;
+}
+
+.ebook-text h2 {
+  color: #1a1a3c;
+  font-size: 2.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.ebook-text p {
+  color: #1a1a3c;
+  font-size: 2.05rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.ebook-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #1a1a3c;
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.ebook-btn:hover {
+  background-color: #13132e;
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .ebook-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ebook-image img {
+    max-width: 220px;
+    margin-bottom: 20px;
+  }
+}

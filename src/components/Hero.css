@@ -1,0 +1,119 @@
+.hero {
+  width: 100%;
+  height: 100vh; /* desktop height */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-top: 70px;
+}
+
+.hero-overlay {
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateY(-70px);
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-buttons a {
+  border: 2px solid white;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons a:hover {
+  background-color: white;
+  color: black;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh; /* reduce section height */
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .hero-overlay {
+    transform: translateY(-40px); /* move overlay up less */
+    padding: 15px;
+  }
+  .hero-buttons {
+    flex-direction: column; /* stack buttons vertically */
+    gap: 12px; /* space between buttons */
+  }
+  .hero-buttons a {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .hero {
+    height: 45vh; /* even shorter for small phones */
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .hero-overlay {
+    transform: translateY(-30px);
+    padding: 10px;
+  }
+  .hero-buttons a {
+    padding: 8px 18px;
+  }
+}

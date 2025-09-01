@@ -1,0 +1,108 @@
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+.navbar {
+background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: fixed;   /* was sticky */
+  top: 0;
+  left: 0;
+  width: 100%;       /* make sure it stretches */
+  z-index: 1000;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.navbar-logo img {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1a1a3c; /* dark navy */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+
+
+.nav-links a:hover {
+  color: #fbb034; /* orange hover */
+}
+
+.active-link {
+  color: #fbb034; /* orange for active page */
+}
+.logout-btn {
+  border: none;
+  text-decoration: none;
+  background: none;
+  font-size: 1.0rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #1a1a3c;
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+ .nav-links {
+    position: fixed; /* fixed so it sits above all content */
+    top: 70px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    text-align: left;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.05);
+    transform: translateX(100%); /* Fully off-screen */
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+     transform: translateX(0);
+  }
+}
+
+.profile-icon {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.profile-icon:hover {
+  color: #fbb034;
+}

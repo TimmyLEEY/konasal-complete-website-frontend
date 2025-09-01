@@ -1,0 +1,80 @@
+.reviews-section {
+  background-color: #0b2c64; /* navy */
+  color: white;
+  padding: 60px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.reviews-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.reviews-container {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.reviews-container::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+
+.review-card {
+  flex: 0 0 350px; /* bigger width */
+  background: white;
+  color: #1a1a3c;
+  border-radius: 15px;
+  padding: 25px;
+  scroll-snap-align: center; /* snap each card to center */
+  text-align: center;
+}
+
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.review-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
+
+.review-text {
+  font-size: 1rem;
+  margin: 15px 0;
+}
+
+.review-name {
+  font-weight: bold;
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.review-stars {
+  color: #fbb034; /* orange stars */
+  margin-top: 10px;
+}
+.review-name::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+     width: 300px; /* length of the yellow line */
+  height: 3px;
+    bottom: -20px;
+  background-color: #fbb034;
+  border-radius: 2px;
+}

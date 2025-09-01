@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+/* General Page Styles */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.top-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #002060;
+  /* margin-bottom: 8px; */
+}
+
+.top-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 100;
+  /* margin-bottom: 16px; */
+  color: #183366;
+}
+
+.checkbox-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+}
+.topDiv{
+    background-color: #ffe9a3;
+    padding: 1px;
+}
+
+.formDiv{
+display: flex;
+justify-content: center;
+align-content: center;
+padding: 20px;
+  background-color: #ffc000; /* yellow background */
+
+}
+
+
+.checkbox-form label {
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.submit-btn {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+.submit-btn:hover {
+  background: #172554;
+}
+
+/* Bottom Section */
+.bottom-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+.bottom-section h3 {
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+}
+
+.bottom-section span {
+  font-weight: bold;
+}
+
+.info-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* Centers the whole form */
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.info-form input {
+  width: 85%;            /* Wider inputs but not 100% */
+  max-width: 650px;      /* Optional: set a maximum width */
+  padding: 12px;
+  font-size: 1rem;
+  height: 65px;
+  border: 3px solid black;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.cont{
+    line-height: 1.5;
+}
+.cont{
+    font-size: 1.6rem;
+}
+::placeholder{
+    font-size: 0.8rem;
+}
+input{
+    color: black;
+}

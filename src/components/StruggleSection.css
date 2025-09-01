@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.struggle-section {
+  background-color: #fbb034;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 50px;
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: visible; /* allow images to extend */
+  min-height: 100%; /* make sure yellow covers all */
+}
+.struggle-section a{
+    text-decoration: underline;
+}
+html, body {
+  overflow-x: hidden; /* stop horizontal scroll globally */
+}
+
+.struggle-text {
+  flex: 1;
+  min-width: 300px;
+  z-index: 2;
+}
+
+.struggle-text h2 {
+  color: #1a1a3c;
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.struggle-text p {
+  color: #3a3a3a;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.struggle-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 2px solid #1a1a3c;
+  border-radius: 30px;
+  color: #1a1a3c;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.struggle-btn:hover {
+  background-color: #1a1a3c;
+  color: white;
+}
+
+.struggle-images {
+  flex: 1;
+  position: relative;
+  min-width: 300px;
+  height: 500px;
+}
+
+.circle {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: absolute;
+}
+
+.circle.top {
+  top: -10px;
+  right: 70px;
+  z-index: 3;
+}
+
+.circle.middle {
+  top: 110px;
+  right: 230px;
+  z-index: 2;
+}
+
+.circle.bottom {
+  top: 230px;
+  right: 70px;
+  z-index: 1;
+}
+@media screen and (max-width: 768px) {
+  .struggle-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0px;
+    background-color: #fbb034;
+    position: relative;
+    width: 100%;
+  }
+
+   .struggle-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 25px; /* this is already there */
+    padding-right: 35px; /* extra space on the right */
+    box-sizing: border-box;
+  }
+  .struggle-text h2{
+    font-size: 30px;
+  }
+  .struggle-text{
+    font-size: smaller;
+  }
+
+  .struggle-images {
+    width: 100%;
+    min-height: calc(150px * 2 + 60px); /* auto adjusts height based on circles */
+    position: relative;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: absolute;
+    max-width: 90vw; /* ensures it never pushes beyond viewport */
+  }
+
+  /* Zig-zag overlap */
+  .circle.top {
+    top: 0;
+    left: 62%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  .circle.middle {
+    top: 90px;
+    left: 38%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .circle.bottom {
+    top: 180px;
+    left: 62%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+}
