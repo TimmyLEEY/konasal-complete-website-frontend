@@ -5,12 +5,25 @@ const ExitPopup = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Show popup after refresh if not already shown this session
-    const popupShown = sessionStorage.getItem("exitPopupShown");
-    if (!popupShown) {
-      setShow(true);
-      sessionStorage.setItem("exitPopupShown", "true");
-    }
+    const handleExitIntent = (e) => {
+      // Detect if user moves mouse near top of screen
+      if (e.clientY <= 50) {
+        const lastShown = localStorage.getItem("exitPopupLastShown");
+        const now = Date.now();
+
+        // Check if popup was shown in the last 5 minutes
+        if (!lastShown || now - lastShown > 5 * 60 * 1000) {
+          setShow(true);
+          localStorage.setItem("exitPopupLastShown", now.toString());
+        }
+      }
+    };
+
+    document.addEventListener("mouseout", handleExitIntent);
+
+    return () => {
+      document.removeEventListener("mouseout", handleExitIntent);
+    };
   }, []);
 
   const handleClose = () => setShow(false);

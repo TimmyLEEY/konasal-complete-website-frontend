@@ -19,6 +19,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import NotFound from "./pages/NotFound";
 
 
 function ScrollToHashElement() {
@@ -55,6 +56,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
         <Route path="/reset-password" element={<ResetPassword/>}/>
         <Route path="/ebook-form" element={<EbookForm/>}/>
+        <Route path="*" element={<NotFound/>}/>
       
 
 

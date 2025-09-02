@@ -2,12 +2,15 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  
 }
 /* General Page Styles */
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transform: translateY(-50px);
+  
 }
 
 
@@ -26,6 +29,9 @@ body {
   /* margin-bottom: 16px; */
   color: #183366;
 }
+.top-section{
+  
+}
 
 .checkbox-form {
   display: flex;
@@ -42,9 +48,12 @@ body {
 display: flex;
 justify-content: center;
 align-content: center;
-padding: 20px;
+/* padding: 20px; */
   background-color: #ffc000; /* yellow background */
 
+}
+.btm{
+  height: 100vh;
 }
 
 
@@ -117,4 +126,9 @@ padding: 20px;
 }
 input{
     color: black;
+}
+@media (max-width: 768px){
+  .btm{
+    height: 80vh;
+  }
 }

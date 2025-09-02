@@ -118,6 +118,7 @@ html, body {
     width: 100%;
     min-height: calc(150px * 2 + 60px); /* auto adjusts height based on circles */
     position: relative;
+    transform: translateX(-25PX);
   }
 
   .circle {
