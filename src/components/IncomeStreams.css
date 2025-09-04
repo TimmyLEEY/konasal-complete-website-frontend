@@ -29,9 +29,7 @@ body {
   /* margin-bottom: 16px; */
   color: #183366;
 }
-.top-section{
-  
-}
+
 
 .checkbox-form {
   display: flex;
@@ -129,6 +127,6 @@ input{
 }
 @media (max-width: 768px){
   .btm{
-    height: 80vh;
+    height: 88vh;
   }
 }

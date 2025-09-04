@@ -69,9 +69,22 @@
     flex-direction: column;
     text-align: center;
   }
+  .ebook-text h2{
+    font-size: 2.0rem;
+  }
+  .ebook-text p{
+    font-size: 1.5rem;
+  }
 
   .ebook-image img {
     max-width: 220px;
     margin-bottom: 20px;
   }
+
+.ebook-text a {
+    font-size: 1.1rem;  /* smaller size on mobile */
+    padding: 10px 20px; /* optional: shrink padding too */
+  }
+
+
 }
