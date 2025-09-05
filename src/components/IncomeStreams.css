@@ -149,6 +149,15 @@ input{
   }
   .btm {
     min-height: auto;  /* remove strict screen-height requirement */
-    padding-bottom: 40px; /* add safe space before footer */
+    
+  }
+  .info-form input{
+    height: 40px;
+  }
+  .cont h3{
+    font-size: 1.2rem;
+  }
+  .cont p{
+    font-size: 1.0rem;
   }
 }
