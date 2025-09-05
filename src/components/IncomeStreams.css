@@ -51,7 +51,8 @@ align-content: center;
 
 }
 .btm{
-  height: 100vh;
+   min-height: 100vh;  /* ensures it fills tall screens */
+  height: auto;
 }
 
 
@@ -125,8 +126,29 @@ align-content: center;
 input{
     color: black;
 }
-@media (max-width: 768px){
-  .btm{
-    height: 88vh;
+@media (max-width: 768px) {
+  .info-form input {
+    width: 90%;          /* make inputs fit better */
+    margin: 0 auto;      /* center them */
+  }
+
+  .submit-btn {
+    width: 90%;          /* same width as inputs */
+    margin: 10px auto 0; /* center it below inputs */
+    font-size: 0.9rem;   /* slightly smaller button text */
+  }
+
+  .checkbox-form {
+    gap: 20px;           /* reduce gap for smaller screens */
+    padding: 10px;       /* add padding to avoid edge sticking */
+  }
+
+  .checkbox-form label {
+    font-size: 1rem;     /* reduce text size for checkboxes */
+    line-height: 1.4;
+  }
+  .btm {
+    min-height: auto;  /* remove strict screen-height requirement */
+    padding-bottom: 40px; /* add safe space before footer */
   }
 }
