@@ -8,6 +8,10 @@ const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
+  const createAccount = () => {
+    navigate('/register')
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
@@ -67,11 +71,11 @@ const Login = () => {
 
             <hr />
 
-            <Link to="/register">
-              <button type="button" className="create-account">
+          
+              <button onClick={createAccount} type="button" className="create-account">
                 Create New Account
               </button>
-            </Link>
+            
           </form>
         </div>
       </div>

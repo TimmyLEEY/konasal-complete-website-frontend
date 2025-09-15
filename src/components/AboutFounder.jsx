@@ -17,7 +17,7 @@ const AboutFounder = () => {
             brings a strong analytical and strategic background to her leadership
             role.
           </p>
-          <a href="#our-story" className="btn-outline">
+          <a href="/about" className="btn-outline">
             Learn More About Our Story
           </a>
         </div>

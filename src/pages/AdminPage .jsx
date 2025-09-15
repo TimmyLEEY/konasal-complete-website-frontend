@@ -17,14 +17,12 @@ const AdminPage = () => {
 
     try {
       setLoading(true);
-      // Fetch regular forms
       const resForms = await fetch("https://konasal-complete-website-backend.onrender.com/api/forms", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const formsData = await resForms.json();
       setForms(formsData || []);
 
-      // Fetch eBook leads
       const resEbook = await fetch("https://konasal-complete-website-backend.onrender.com/api/ebook", {
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -68,72 +66,80 @@ const AdminPage = () => {
   const renderEbookTable = () => (
     <div className="table-section">
       <h2>Ebook Form Submissions</h2>
-      <table className="admin-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Submitted At</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ebookForms.length > 0 ? (
-            ebookForms.map((item) => (
-              <tr key={item._id}>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>{item.phone || "N/A"}</td>
-                <td>{new Date(item.createdAt).toLocaleString()}</td>
-                <td>
-                  <button onClick={() => handleDelete(item._id, "ebook")}>Delete</button>
-                </td>
-              </tr>
-            ))
-          ) : (
+      <div className="table-wrapper">
+        <table className="admin-table">
+          <thead>
             <tr>
-              <td colSpan="5" style={{ textAlign: "center" }}>No ebook submissions yet.</td>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Submitted At</th>
+              <th>Actions</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {ebookForms.length > 0 ? (
+              ebookForms.map((item) => (
+                <tr key={item._id}>
+                  <td data-label="Name">{item.name}</td>
+                  <td data-label="Email">{item.email}</td>
+                  <td data-label="Phone">{item.phone || "N/A"}</td>
+                  <td data-label="Submitted At">{new Date(item.createdAt).toLocaleString()}</td>
+                  <td data-label="Actions">
+                    <button onClick={() => handleDelete(item._id, "ebook")}>Delete</button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5" style={{ textAlign: "center" }}>No ebook submissions yet.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 
   const renderFormsTable = () => (
     <div className="table-section">
       <h2>Other Form Submissions</h2>
-      <table className="admin-table">
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Form Type</th>
-            <th>Data</th>
-            <th>Submitted At</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {forms.length > 0 ? (
-            forms.map((form) => (
-              <tr key={form._id}>
-                <td>{form.userId?.name} ({form.userId?.email})</td>
-                <td>{form.formType}</td>
-                <td><pre>{JSON.stringify(form.data, null, 2)}</pre></td>
-                <td>{new Date(form.submittedAt).toLocaleString()}</td>
-                <td>
-                  <button onClick={() => handleDelete(form._id, "forms")}>Delete</button>
-                </td>
-              </tr>
-            ))
-          ) : (
+      <div className="table-wrapper">
+        <table className="admin-table">
+          <thead>
             <tr>
-              <td colSpan="5" style={{ textAlign: "center" }}>No submissions yet.</td>
+              <th>User</th>
+              <th>Form Type</th>
+              <th>Data</th>
+              <th>Submitted At</th>
+              <th>Actions</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {forms.length > 0 ? (
+              forms.map((form) => (
+                <tr key={form._id}>
+                  <td data-label="User">
+                    {form.userId?.name} ({form.userId?.email})
+                  </td>
+                  <td data-label="Form Type">{form.formType}</td>
+                  <td data-label="Data">
+                    <pre>{JSON.stringify(form.data, null, 2)}</pre>
+                  </td>
+                  <td data-label="Submitted At">{new Date(form.submittedAt).toLocaleString()}</td>
+                  <td data-label="Actions">
+                    <button onClick={() => handleDelete(form._id, "forms")}>Delete</button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5" style={{ textAlign: "center" }}>No submissions yet.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 

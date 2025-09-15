@@ -8,35 +8,47 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
-
-    try {
-      const res = await axios.post("https://konasal-complete-website-backend.onrender.com/api/auth/register", {
-        name,
-        email,
-        password,
-      });
-
-      if (res.status === 201) {
-        toast.success("✅ Account created successfully!");
-        navigate("/login"); // redirect to login page
-      }
-    } catch (err) {
-      console.error(err);
-      setError(
-        err.response?.data?.message || "Something went wrong. Try again."
-      );
-    } finally {
-      setLoading(false);
-    }
+  const login = () => {
+    navigate("/login"); 
   };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError("");
+
+  // ✅ Do password check before setting loading
+  if (password !== confirmPassword) {
+    setError("❌ Passwords do not match!");
+    return; // stop here
+  }
+
+  setLoading(true); // only set loading if validation passes
+
+  try {
+    const res = await axios.post(
+      "https://konasal-complete-website-backend.onrender.com/api/auth/register",
+      { name, email, password }
+    );
+
+    if (res.status === 201) {
+      toast.success("✅ Account created successfully!");
+      navigate("/login"); // redirect to login page
+    }
+  } catch (err) {
+    console.error(err);
+    setError(
+      err.response?.data?.message || "Something went wrong. Try again."
+    );
+  } finally {
+    setLoading(false); // always reset loading
+  }
+};
+  
 
   return (
     <section className="login-section">
@@ -76,6 +88,13 @@ const Signup = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+             <input
+              type="password"
+              placeholder="Confirm-Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
             
             <button type="submit" className="login-btn" disabled={loading}>
               {loading ? (
@@ -85,13 +104,15 @@ const Signup = () => {
               )}
             </button>
 
+            
+
             <hr />
 
-            <Link to="/login">
-              <button type="button" className="create-account">
+          
+              <button id="login" type="button" className="login-btn" onClick={login}>
                 Login
               </button>
-            </Link>
+            
           </form>
         </div>
       </div>

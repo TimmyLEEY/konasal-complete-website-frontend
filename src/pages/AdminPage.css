@@ -7,6 +7,7 @@
   background-color: #f7f8fa;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden; /* ✅ Prevent sideways scroll */
 }
 
 /* Header */
@@ -78,14 +79,88 @@
   background-color: #c0392b;
 }
 
-/* Responsive */
+/* Refresh Button */
+.refresh-btn {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.refresh-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive (Mobile Cards) */
 @media screen and (max-width: 768px) {
-  .admin-table th, .admin-table td {
-    padding: 10px;
-    font-size: 0.85rem;
+  .admin-table,
+  .admin-table thead,
+  .admin-table tbody,
+  .admin-table th,
+  .admin-table td,
+  .admin-table tr {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table tr {
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    max-width: 100%;
+    overflow-x: hidden; /* ✅ Prevent overflow */
+  }
+
+  .admin-table td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+
+  .admin-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+    flex-shrink: 0;
+    width: 40%;
+  }
+
+  .admin-table pre {
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
   }
 
   .page-container h1 {
     font-size: 1.6rem;
   }
+}
+
+/* Global fix for sideways scroll */
+body {
+  overflow-x: hidden;
 }

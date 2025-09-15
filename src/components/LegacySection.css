@@ -1,6 +1,6 @@
 .legacy-section {
   background-color: #002D62;
-  padding: 50px 20px;
+  padding: 20px 20px 0 20px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
@@ -23,7 +23,7 @@
   background: white;
   border-radius: 5px;
   overflow: hidden;
-  max-width: 320px;
+  max-width: 380px;
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@
   color: #002D62;
   margin: 15px;
   text-align: left;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .card a {

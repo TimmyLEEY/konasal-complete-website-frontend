@@ -44,3 +44,11 @@ body {
   background: white;
   color: #0a1a3c;
 }
+
+@media screen and (max-width: 768px){
+  .cta-btn{
+    font-size: 1.1rem;
+  padding: 10px 20px;   /* bigger button */
+    
+  }
+}
