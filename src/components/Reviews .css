@@ -78,3 +78,8 @@
   background-color: #fbb034;
   border-radius: 2px;
 }
+@media screen and (max-width: 768px){
+  .reviews-section{
+    padding: 60px 20px;
+  }
+}
