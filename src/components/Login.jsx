@@ -7,10 +7,11 @@ import { toast } from "react-toastify";
 const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // ✅ state for toggle
 
   const createAccount = () => {
-    navigate('/register')
-  }
+    navigate("/register");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,10 +20,13 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("https://konasal-complete-website-backend.onrender.com/api/auth/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://konasal-complete-website-backend.onrender.com/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
 
       const { token, user } = res.data;
       localStorage.setItem("userToken", token);
@@ -54,28 +58,45 @@ const Login = () => {
         <div className="login-right">
           <form className="login-form" onSubmit={handleSubmit}>
             <input type="email" placeholder="Email Address" required />
-            <input type="password" placeholder="Password" required />
+
+            {/* ✅ Password field with toggle */}
+            <div className="password-wrapper">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                required
+              />
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </button>
+            </div>
 
             {/* ✅ Loader inside button */}
             <button type="submit" className="login-btn" disabled={loading}>
-              {loading ? (
-                <div className="spinner"></div>
-              ) : (
-                "Login"
-              )}
+              {loading ? <div className="spinner"></div> : "Login"}
             </button>
 
-            <Link style={{ textDecoration: "underline" }} id="forgetPassword">
+            <Link
+              to="/forgot-password"
+              style={{ textDecoration: "underline" }}
+              id="forgetPassword"
+            >
               Forgot Password?
             </Link>
 
             <hr />
 
-          
-              <button onClick={createAccount} type="button" className="create-account">
-                Create New Account
-              </button>
-            
+            <button
+              onClick={createAccount}
+              type="button"
+              className="create-account"
+            >
+              Create New Account
+            </button>
           </form>
         </div>
       </div>

@@ -18,7 +18,7 @@ const FreeEbookSection = () => {
             Download our FREE eBook to learn simple steps to rebuild your finances 
             and take control of your money starting now
           </p>
-          <a href="https://payhip.com/KonasalLegacyPartners" className="ebook-btn">
+          <a href="https://payhip.com/Konasal" className="ebook-btn">
             GRAB YOUR FREE E-BOOK NOW!
           </a>
         </div>

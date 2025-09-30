@@ -54,7 +54,7 @@ function App() {
         <Route path="/terms-of-use" element={<TermOfUsePage/>}/>
         <Route path="/konal" element={<AdminPage/>}/>
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
-        <Route path="/reset-password" element={<ResetPassword/>}/>
+        <Route path="/reset-password/:token" element={<ResetPassword/>}/>
         <Route path="/ebook-form" element={<EbookForm/>}/>
         <Route path="*" element={<NotFound/>}/>
       

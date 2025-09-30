@@ -29,7 +29,7 @@ const EbookForm = () => {
 
       if (res.ok) {
          toast.success(data.message);
-        window.location.href = "https://payhip.com/KonasalLegacyPartners";
+        window.location.href = "https://payhip.com/Konasal";
       } else {
           toast.error(data.message || "Something went wrong. Please try again.");
       }

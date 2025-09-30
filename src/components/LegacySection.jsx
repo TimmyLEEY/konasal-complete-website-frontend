@@ -15,7 +15,7 @@ const LegacySection = () => {
         <div className="card">
           <img src={img1} alt="Financial Literacy" />
           <h3>Financial Literacy and Workshop</h3>
-          <a href="https://konasalinsurance.zohobookings.com/#/4777453000000044052">Learn More</a>
+          <a href="https://calendly.com/inquiry-konasalinsurance">Learn More</a>
         </div>
         <div id="cardd" className="card">
           <img src={img2} alt="Life and Legacy" />
